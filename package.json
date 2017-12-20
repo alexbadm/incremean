@@ -1,12 +1,10 @@
 {
   "name": "incremean",
   "version": "1.0.0",
-  "description": "",
+  "description": "Method to compute an arithmetic mean incrementally",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "types": "index.d.ts",
+  "keywords": ["arithmetic mean"],
   "author": "Alex B. <eto.ya@list.ru>",
   "license": "ISC"
 }

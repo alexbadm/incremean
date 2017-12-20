@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function incremean () {
+module.exports = function Incremean () {
   var aver = 0;
   var counter = 0;
   return function () {
