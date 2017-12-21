@@ -7,12 +7,12 @@ export interface IncremeanInit {
 }
 
 class Incremean {
-  public static restore(json: IncremeanInit | string) {
+  public static restore(json: IncremeanInit | string): Incremean {
     const init: IncremeanInit = (typeof json === "string") ? JSON.parse(json) : json;
     return new Incremean(init);
   }
 
-  public static unmarshal(json: IncremeanTuple | string) {
+  public static unmarshal(json: IncremeanTuple | string): Incremean {
     const tuple: IncremeanTuple = (typeof json === "string") ? JSON.parse(json) : json;
     if (!Array.isArray(tuple) || tuple.length !== 3) {
       throw new Error("Failed to unmarshal the tuple");
@@ -34,7 +34,7 @@ class Incremean {
     this.MAX_VAULUE_EXCEEDED = init && init.MAX_VAULUE_EXCEEDED || false;
   }
 
-  public add(...args: number[]) {
+  public add(...args: number[]): number {
     for (const arg of args) {
       const totalAmount = this.mean * this.counter + arg;
       if (totalAmount > Number.MAX_VALUE) {
@@ -45,11 +45,11 @@ class Incremean {
     return this.getMean();
   }
 
-  public getCounter() {
+  public getCounter(): number {
     return this.counter;
   }
 
-  public getMean() {
+  public getMean(): number {
     return this.mean;
   }
 
@@ -57,7 +57,7 @@ class Incremean {
     return JSON.stringify([ this.counter, this.mean, this.MAX_VAULUE_EXCEEDED ]);
   }
 
-  public isValid() {
+  public isValid(): boolean {
     return !this.MAX_VAULUE_EXCEEDED;
   }
 }
