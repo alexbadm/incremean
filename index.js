@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Incremean = (function () {
+var Incremean = /** @class */ (function () {
     function Incremean(init) {
         this.counter = init && init.counter || 0;
         this.mean = init && init.mean || 0;
@@ -29,7 +29,7 @@ var Incremean = (function () {
         for (var _a = 0, args_1 = args; _a < args_1.length; _a++) {
             var arg = args_1[_a];
             var totalAmount = this.mean * this.counter + arg;
-            if (totalAmount > Number.MAX_VALUE) {
+            if (totalAmount === Number.MAX_VALUE) {
                 this.MAX_VAULUE_EXCEEDED = true;
             }
             this.mean = totalAmount / ++this.counter;

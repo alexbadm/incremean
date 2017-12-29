@@ -37,7 +37,7 @@ class Incremean {
   public add(...args: number[]): number {
     for (const arg of args) {
       const totalAmount = this.mean * this.counter + arg;
-      if (totalAmount > Number.MAX_VALUE) {
+      if (totalAmount === Number.MAX_VALUE) {
         this.MAX_VAULUE_EXCEEDED = true;
       }
       this.mean = totalAmount / ++this.counter;
